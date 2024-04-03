@@ -1,0 +1,6 @@
+<div style="display: flex; justify-content: center; gap: 2rem; padding-bottom: 3rem;">
+  <app-product
+    *ngFor="let producto of productos"
+    [product]="producto"
+    (clickedProduct)="onClickedProduct($event)" />
+</div>

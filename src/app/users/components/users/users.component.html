@@ -1,0 +1,7 @@
+<input type="number" placeholder="Ingresa el numero de resultados que deseas ver" [(ngModel)]="limit" (keydown.enter)="fetchUsers()">
+<ul>
+    <li *ngFor="let user of users">
+        {{ user.email }}
+        <img [src]="user.picture.medium" alt="">
+    </li>
+</ul>

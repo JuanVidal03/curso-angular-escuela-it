@@ -1,0 +1,20 @@
+.product-card img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+.product-card{
+    width: 300px;
+    height: 550px;
+    border-radius: 10px;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #f2f2f2;
+    transition: all ease .3s;
+}
+.product-card:hover{
+    transform: scale(1.03);
+}
+.product-info{
+    padding: 1rem;
+}

@@ -1,0 +1,51 @@
+<h1>Hola, {{ nombre }}</h1>
+<button (click)="changeName()">Cambiar Nombre</button>
+
+<hr>
+
+<div>
+  <h3>Ingresa el nombre de la banda</h3>
+  <input [(ngModel)]="rockBandName" type="text" placeholder="Ingresa el nombre de la banda">
+  <button (click)="addRockBand()">Agregar banda de Rock</button>
+  <button (click)="limpiarContenido()">Limpiar</button>
+  <h3 *ngIf="bandasDeRock.length == 0">No hay bandas de rock actualmente</h3>
+  <ul *ngIf="bandasDeRock.length > 0">
+    <li *ngFor="let rockBand of bandasDeRock; index as i">
+      {{i}} - {{ rockBand }}
+      <button (click)="deleteRockBand(i)">Eliminar</button>
+      <button (click)="updateItem(i)">Actualizar</button>
+    </li>
+  </ul>
+</div>
+
+<hr>
+
+<div>
+  <h3>Usando ngIF</h3>
+  <div *ngIf="rockBandName == 'juan'">
+    <p>Escribiste juan en el input</p>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <h3>Usando ngSwitch</h3>
+  <div [ngSwitch]="rockBandName">
+    <p *ngSwitchCase="'juan'">Escribiste Juan</p>
+    <p *ngSwitchCase="'julian'">Escribiste Julian</p>
+    <p *ngSwitchCase="'camilo'">Escribiste Camilo</p>
+    <p *ngSwitchDefault>Noy hay coincidencias con las personas</p>
+  </div>
+</div>
+
+<hr>
+<h3>Iterando objetos -- USUARIOS</h3>
+<ul>
+  <li *ngFor="let user of users">
+    Nombre: {{user.name}}
+    Edad: {{user.age}}
+    Soltero: {{user.isSingle ? 'Si' : 'No'}}
+    <img style="width: 100px; height: 100px; object-fit: cover;" [src]="user.avatar" alt="">
+  </li>
+</ul>

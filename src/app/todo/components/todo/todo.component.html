@@ -1,0 +1,9 @@
+<div class="todo">
+    <h1>{{todo.title}}</h1>
+    <p>Completed: {{ todo.completed ? 'Completado' : 'Sin Completar' }}</p>
+    <p>ID: {{ todo.id }}</p>
+    <div>
+        <input type="button" (click)="deleteTodo()" value="Eliminar">
+        <input type="button" (click)="updateTodo()" value="Actualizar Estado">
+    </div>
+</div>

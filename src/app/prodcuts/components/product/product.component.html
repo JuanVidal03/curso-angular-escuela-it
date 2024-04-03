@@ -1,0 +1,11 @@
+<div class="product-card">
+    <img [src]="product.image" alt="{{ product.title }}">
+    <div class="product-info">
+        <!-- usando un custom pipe -->
+        <h1>{{ product.title | uppercase }}</h1>
+        <p>{{ product.price |currency }}</p>
+        <p>{{ product.text }}</p>
+        <p>{{ today }}</p>
+        <button (click)="viewDetail()">Ver Producto</button>
+    </div>
+</div>

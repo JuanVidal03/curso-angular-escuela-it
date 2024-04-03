@@ -1,0 +1,11 @@
+<div *ngIf="productDetail" class="product">
+    <img [src]="productDetail.image" [alt]="productDetail.title">
+    <h1>{{ productDetail.title }}</h1>
+    <p>{{ productDetail.text }}</p>
+    <p>{{ productDetail.price | currency}}</p>
+</div>
+<!-- en caso tal de que el producto no exista -->
+<div *ngIf="!productDetail" class="no-existe-producto">
+    <h1>El producto no existe!</h1>
+    <a routerLink="/products">Ver todos los productos</a>
+</div>
